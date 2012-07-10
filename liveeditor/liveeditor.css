@@ -1,0 +1,332 @@
+/* CSS declarations go here */
+body {
+    background: url("pattern2.png");
+}
+
+#html_panel {
+    height: 200px;
+    left: 0;
+    top: 0px;
+    width: 635px;
+}
+
+#css_panel {
+    height: 200px;
+    left: 0;
+    top: 200px;
+    width: 635px;
+}
+
+#js_panel {
+    height: 200px;
+    left: 0;
+    top: 400px;
+    width: 635px;
+}
+
+#preview_panel {
+    height: 600px;
+    left: 635px;
+    top: 0px;
+    width: 635px;
+}
+
+.panel {
+    width: 630px;
+    overlow: hidden;
+    position: absolute;
+    z-index: 1;
+}
+
+#preview_panel iframe {
+    border: 0 none;
+    height: 100%;
+    width: 100%;
+}
+
+.inner {
+    bottom: 5px;
+    left: 5px;
+    position: absolute;
+    right: 5px;
+    top: 5px;
+}
+
+.frame {
+    background: none repeat scroll 0 0 white;
+    border: 1px solid #000;
+    bottom: 0;
+    box-shadow: 0 1px 0 #DEDEDE inset;
+    font: 12px "bitstream vera sans mono",monospace;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.frame .focused {
+    border-color: #666;
+}
+
+.frame .focused .settings {
+    opacity: 0;
+}
+
+.frame textarea {
+    margin: 0;
+    padding: 4px;
+    border: 0;
+    background: transparent;
+    box-sizing: border-box;
+    font: inherit;
+    resize: none;
+}
+
+.frame textarea .is-hidden {
+    display: none;
+}
+
+.frame textarea:focus {
+    outline: none;
+}
+
+.frame .settings {
+    position: absolute;
+    z-index: 2;
+    top: 7px;
+    right: 7px;
+    height: 19px;
+    padding: 0 5px;
+    border-radius: 3px;
+    border: 1px solid #9b9b9b;
+    background: #fff;
+    line-height: 20px;
+    opacity: .6;
+}
+
+.frame .active_line {
+    background: #f5f5f5;
+}
+
+
+/******************* CODE MIRROR ********************************/
+
+.CodeMirror {
+    bottom: 0;
+    font: inherit;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.CodeMirror-scroll {
+    bottom: 0;
+    height: auto;
+    left: 0;
+    overflow: auto;
+    position: absolute;
+    right: 0;
+    top: 0;
+    outline: medium none;
+}
+
+/* Vertical scrollbar */
+.CodeMirror-scrollbar {
+    visibility: hidden;
+  float: right;
+  overflow-x: hidden;
+  overflow-y: hidden;
+
+  /* This corrects for the 1px gap introduced to the left of the scrollbar
+     by the rule for .CodeMirror-scrollbar-inner. */
+  margin-left: -1px;
+}
+.CodeMirror-scrollbar-inner {
+  /* This needs to have a nonzero width in order for the scrollbar to appear
+     in Firefox and IE9. */
+  width: 1px;
+}
+.CodeMirror-scrollbar.cm-sb-overlap {
+  /* Ensure that the scrollbar appears in Lion, and that it overlaps the content
+     rather than sitting to the right of it. */
+  position: absolute;
+  z-index: 1;
+  float: none;
+  right: 0;
+  min-width: 12px;
+  visibility: hidden;
+}
+.CodeMirror-scrollbar.cm-sb-nonoverlap {
+  min-width: 12px;
+}
+.CodeMirror-scrollbar.cm-sb-ie7 {
+  min-width: 18px;
+}
+
+
+.CodeMirror-gutter {
+    background-color: #F7F7F7;
+    border-right: 1px solid #EEEEEE;
+    height: 100%;
+    left: 0;
+    min-width: 2em;
+    position: absolute;
+    top: 0;
+    z-index: 10;
+}
+.CodeMirror-gutter-text {
+    color: #AAAAAA;
+    padding: 0.4em 0.2em 0.4em 0.4em;
+    text-align: right;
+    white-space: pre !important;
+}
+.CodeMirror-lines {
+    padding: 0.4em;
+    white-space: pre;
+}
+.CodeMirror pre {
+    background: none repeat scroll 0 0 transparent;
+    border-radius: 0 0 0 0;
+    border-width: 0;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    margin: 0;
+    padding: 0;
+    white-space: pre;
+    word-wrap: normal;
+}
+.CodeMirror-wrap pre {
+    white-space: pre-wrap;
+    word-break: normal;
+    word-wrap: break-word;
+}
+.CodeMirror-wrap .CodeMirror-scroll {
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+.CodeMirror textarea {
+    outline: medium none !important;
+}
+.CodeMirror pre.CodeMirror-cursor {
+    border-left: 1px solid black;
+    border-right: medium none;
+    position: absolute;
+    visibility: hidden;
+    width: 0;
+    z-index: 10;
+}
+.CodeMirror pre.CodeMirror-cursor.CodeMirror-overwrite {
+}
+.CodeMirror-focused pre.CodeMirror-cursor {
+    visibility: visible;
+}
+div.CodeMirror-selected {
+    background: none repeat scroll 0 0 #D9D9D9;
+}
+.CodeMirror-focused div.CodeMirror-selected {
+    background: none repeat scroll 0 0 #D7D4F0;
+}
+.CodeMirror-searching {
+    background: none repeat scroll 0 0 rgba(255, 255, 0, 0.4);
+}
+.cm-s-default span.cm-keyword {
+    color: #770088;
+}
+.cm-s-default span.cm-atom {
+    color: #221199;
+}
+.cm-s-default span.cm-number {
+    color: #116644;
+}
+.cm-s-default span.cm-def {
+    color: #0000FF;
+}
+.cm-s-default span.cm-variable {
+    color: black;
+}
+.cm-s-default span.cm-variable-2 {
+    color: #0055AA;
+}
+.cm-s-default span.cm-variable-3 {
+    color: #008855;
+}
+.cm-s-default span.cm-property {
+    color: black;
+}
+.cm-s-default span.cm-operator {
+    color: black;
+}
+.cm-s-default span.cm-comment {
+    color: #AA5500;
+}
+.cm-s-default span.cm-string {
+    color: #AA1111;
+}
+.cm-s-default span.cm-string-2 {
+    color: #FF5500;
+}
+.cm-s-default span.cm-meta {
+    color: #555555;
+}
+.cm-s-default span.cm-error {
+    color: #FF0000;
+}
+.cm-s-default span.cm-qualifier {
+    color: #555555;
+}
+.cm-s-default span.cm-builtin {
+    color: #3300AA;
+}
+.cm-s-default span.cm-bracket {
+    color: #CCCC77;
+}
+.cm-s-default span.cm-tag {
+    color: #117700;
+}
+.cm-s-default span.cm-attribute {
+    color: #0000CC;
+}
+.cm-s-default span.cm-header {
+    color: #AA00AA;
+}
+.cm-s-default span.cm-quote {
+    color: #009900;
+}
+.cm-s-default span.cm-hr {
+    color: #999999;
+}
+.cm-s-default span.cm-link {
+    color: #0000CC;
+}
+span.cm-header, span.cm-strong {
+    font-weight: bold;
+}
+span.cm-em {
+    font-style: italic;
+}
+span.cm-emstrong {
+    font-style: italic;
+    font-weight: bold;
+}
+span.cm-link {
+    text-decoration: underline;
+}
+div.CodeMirror span.CodeMirror-matchingbracket {
+    color: #00FF00;
+}
+div.CodeMirror span.CodeMirror-nonmatchingbracket {
+    color: #FF2222;
+}
+textarea {
+    padding: 4px 6px;
+    border: 1px solid #bfbfbf;
+    border-radius: 3px;
+    background: #f5f5f5;
+    box-shadow: inset 0 1px 0 #ebebeb;
+} 
+
+textarea:focus {
+    outline: 0;
+}
